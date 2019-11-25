@@ -857,11 +857,16 @@ namespace Microsoft.Xna.Framework.Graphics
             }
         }
 
+        public void ResolveRenderTargets()
+        {
+            PlatformResolveRenderTargets();
+        }
+
         internal void ApplyRenderTargets(RenderTargetBinding[] renderTargets)
         {
             var clearTarget = false;
 
-            PlatformResolveRenderTargets();
+            //PlatformResolveRenderTargets();
 
             // Clear the current bindings.
             Array.Clear(_currentRenderTargetBindings, 0, _currentRenderTargetBindings.Length);
